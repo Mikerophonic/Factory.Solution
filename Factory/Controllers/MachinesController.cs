@@ -34,8 +34,14 @@ namespace Factory.Controllers
     {
       return View(machine);
     }
-    else
+    else if(string.IsNullOrEmpty(machine.Name))
     {
+      ModelState.AddModelError("Name", "Name is required.");
+      return View(machine);
+    }
+    else 
+    {
+      
       _db.Machines.Add(machine);
       _db.SaveChanges();
       return RedirectToAction("Index");
