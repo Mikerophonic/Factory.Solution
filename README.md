@@ -29,8 +29,8 @@ Follow these steps to set up and run the Hair Salon web application locally.
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/HairSalon.git
-cd Factorygit
+git clone https://github.com/Mikerophonic/Factory.Solution.git
+cd Factory
 ```
 
 ### Setup database
@@ -49,12 +49,15 @@ Open the appsettings.json file and insert the following code. Replace [YOUR-USER
         "DefaultConnection": "Server=localhost;Port=3306;database=your_database_name;uid=[YOUR-USERNAME];pwd=[YOUR-MYSQL-PASSWORD];"
     }
 ```
-
-<b>Create Database:</b> Follow the instructions provided in the LearnHowToProgram.com lesson titled <a href="https://www.learnhowtoprogram.com/c-and-net/database-basics/creating-a-test-database-exporting-and-importing-databases-with-mysql-workbench">"Creating a Test Database: Exporting and Importing Databases with MySQL Workbench"</a>. Use the michael_connelly.sql file located in the project's root directory to create a new database in MySQL Workbench with the desired database name.
-
 Navigate to the project directory:
 ```bash
-    $ cd HairSalon
+    $ cd Factory
+```
+
+<b>Create Database:</b> 
+```
+$ dotnet ef migrations add Initial
+$ dotnet ef database update
 ```
 
 Start the project in development mode with a watcher using the following command:
