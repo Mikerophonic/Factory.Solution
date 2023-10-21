@@ -1,9 +1,9 @@
   using Microsoft.AspNetCore.Builder;
   using Microsoft.EntityFrameworkCore;
   using Microsoft.Extensions.DependencyInjection;
-  using ToDoList.Models;
+  using Factory.Models;
   // be sure to change the namespace to match your project
-  namespace ToDoList
+  namespace Factory
   {
     class Program
     {
@@ -13,11 +13,10 @@
         WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
         builder.Services.AddControllersWithViews();
-        // be sure to update the line below for your project
-        builder.Services.AddDbContext<ToDoListContext>(
+        builder.Services.AddDbContext<FactoryContext>(
                           dbContextOptions => dbContextOptions
                             .UseMySql(
-                              builder.Configuration["ConnectionStrings:DefaultConnection"]ServerVersion.AutoDetect(builder.Configuratio["ConnectionStrings:DefaultConnection"]
+                              builder.Configuration["ConnectionStrings:DefaultConnection"],ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"]
                             )
                           )
                         );
