@@ -42,7 +42,7 @@ namespace Factory.Controllers
       {
       _db.Engineers.Add(engineer);
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("Index", "Home");
       }
     }
 
