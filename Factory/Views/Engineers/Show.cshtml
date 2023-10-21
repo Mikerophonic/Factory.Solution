@@ -8,7 +8,10 @@
 <h2>Engineer Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>  
-
+    @using (Html.BeginForm("Delete", "Engineers", new { id = Model.EngineerId }, FormMethod.Post))
+    {
+        <input type="submit" value="Delete"  />
+    }
 @if(@Model.JoinEntities.Count == 0)
 {
   <p>This engineer does not have any machines yet!</p>
