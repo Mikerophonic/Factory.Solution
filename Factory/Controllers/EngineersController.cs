@@ -43,7 +43,7 @@ namespace Factory.Controllers
       return View(thisEngineer);
     }
 
-      public ActionResult AddMachine(int id)
+    public ActionResult AddMachine(int id)
     {
       Engineer thisEngineer = _db.Engineers.FirstOrDefault(engineers => engineers.EngineerId == id);
       ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "Name");
