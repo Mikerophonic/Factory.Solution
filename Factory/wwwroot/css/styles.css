@@ -1,0 +1,102 @@
+body, h1, h2, h3, h4, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Major Mono Display', monospace;
+}
+
+body {
+    background-color: #f0f0f0; 
+    font-family: Arial, sans-serif;
+}
+
+
+.engineers,
+.machines {
+    flex: 1;
+    padding: 10px;
+}
+
+.engineers {
+    background-color: #f0f0f0; 
+}
+
+.machines {
+    background-color: #fff;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* White background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+}
+
+h1 {
+    font-size: 36px;
+    color: #333; 
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 28px;
+    color: #444; 
+    margin-bottom: 16px;
+}
+
+h3 {
+    font-size: 24px;
+    color: #555; 
+    margin-bottom: 12px;
+}
+
+/* Links */
+a {
+    color: #0077bb; /* Blue link color */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #003c6d; /* Darker blue on hover */
+}
+
+/* Buttons */
+button, .btn {
+    background-color: #333; /* Dark gray button background */
+    color: #fff; /* White button text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover, .btn:hover {
+    background-color: #c7c7c7; 
+}
+
+input[type="text"] {
+    width: 200px;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #999; 
+    border-radius: 5px;
+}
+
+.industrial {
+    background-color: #333; /* Dark gray background for industrial elements */
+    color: #fff; /* White text color */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+ul {
+    list-style-type: none;
+}
+

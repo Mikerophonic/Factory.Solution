@@ -12,17 +12,18 @@
     {
         <input type="submit" value="Delete"  />
     }
+<div class="container">
 @if(@Model.JoinEntities.Count == 0)
 {
-  <p>This machine does not have any engineers yet!</p>
+  <p>This machine cannot be repaired by any engineers yet.</p>
 }
 else
 {
-  <h4>This machine has the following engineers:</h4>
+  <h4>This machine can be repaired by the following engineers:</h4>
   <ul>
     @foreach(EngineerMachine join in Model.JoinEntities)
     {
-      <li>Machine: @join.Machine.Name</li>
+      <li>@join.Engineer.Name</li>
       @using (Html.BeginForm("DeleteJoin", "Machines"))
       {
         @Html.Hidden("joinId", @join.EngineerMachineId)
@@ -31,4 +32,7 @@ else
     }
   </ul>
 }
-<p>@Html.ActionLink("Add a Machine", "AddMachine", new { id = Model.MachineId })</p>
+<p>@Html.ActionLink("Add an engineer", "AddEngineer", "Machines", new { id = Model.MachineId })</p>
+</div>
+
+  <p>@Html.ActionLink("Home", "Index", "Home")</p>

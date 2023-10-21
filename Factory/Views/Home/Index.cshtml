@@ -7,34 +7,52 @@
 
 <h1>Welcome to the Dr. Sillystringz's Factory</h1>
 
-<h2>Engineers:</h2>
+<div class="container">
+  <div class="engineers">
+    <h2>Engineers:</h2>
+        <p>
+        <a href="@Url.Action("Create", "Engineers")">
+            <button class="btn">Add an engineer</button>
+        </a>
+    </p>
+    <br>
 
-@if (@Model.Engineers.Count == 0)
-{
-  <h3>No engineers have been added yet!</h3>
-} 
+    @if (@Model.Engineers.Count == 0)
+    {
+      <h3>No engineers have been added yet!</h3>
+    } 
 
-<ul>
-  @foreach(Engineer engineer in Model.Engineers)
-  {
-    <li>@Html.ActionLink($"{engineer.Name}", "Show", "Engineers", new { id = engineer.EngineerId } )</li>
-  }
-</ul>
+    <ul>
+      @foreach(Engineer engineer in Model.Engineers)
+      {
+        <li>@Html.ActionLink($"{engineer.Name}", "Show", "Engineers", new { id = engineer.EngineerId } )</li>
+      }
+    </ul>
 
-<p>@Html.ActionLink("Add an engineer", "Create", "Engineers")</p>
 
-<h2>Machines:</h2>
+  </div>
+  <div class="machines">
+    <h2>Machines:</h2>
+        <p>
+    <a href="@Url.Action("Create", "Machines")">
+        <button class="btn">Add a machine</button>
+    </a>
+</p>
+<br>
 
-@if (@Model.Machines.Count == 0)
-{
-  <h3>No machines have been added yet!</h3>
-} 
+    @if (@Model.Machines.Count == 0)
+    {
+      <h3>No machines have been added yet!</h3>
+    } 
 
-<ul>
-  @foreach(Machine machine in Model.Machines)
-  {
-    <li>@Html.ActionLink($"{machine.Name}", "Show", "Machines", new { id = machine.MachineId })</li>
-  }
-</ul>
+    <ul>
+      @foreach(Machine machine in Model.Machines)
+      {
+        <li>@Html.ActionLink($"{machine.Name}", "Show", "Machines", new { id = machine.MachineId })</li>
+      }
+    </ul>
 
-<p>@Html.ActionLink("Add a machine", "Create", "Machines")</p>
+
+  </div>
+</div>
+

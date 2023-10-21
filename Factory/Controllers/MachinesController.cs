@@ -95,5 +95,15 @@ namespace Factory.Controllers
 
         return RedirectToAction("Index", "Home");
     }
+
+    [HttpPost]
+    public ActionResult DeleteJoin(int joinId)
+    {
+      EngineerMachine joinEntry = _db.EngineerMachines.FirstOrDefault(entry => entry.EngineerMachineId == joinId);
+      _db.EngineerMachines.Remove(joinEntry);
+      _db.SaveChanges();
+      int machineId = joinEntry.MachineId;
+      return RedirectToAction("Show", new { id = machineId });
+    }
  }
 }
