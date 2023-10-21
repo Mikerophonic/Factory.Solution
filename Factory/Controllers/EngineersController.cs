@@ -102,5 +102,19 @@ namespace Factory.Controllers
       int engineerId = joinEntry.EngineerId;
       return RedirectToAction("Show", new { id = engineerId });
     }
+
+    public ActionResult Update(int id)
+    {
+      Engineer thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
+      return View(thisEngineer);
+    }
+
+    [HttpPost]
+    public ActionResult Update(Engineer engineer)
+    {
+      _db.Engineers.Update(engineer);
+      _db.SaveChanges();
+      return RedirectToAction("Show", "Engineers", new { id = engineer.EngineerId });
+    }
  }
 }

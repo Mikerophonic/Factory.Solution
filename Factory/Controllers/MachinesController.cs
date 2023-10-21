@@ -105,5 +105,20 @@ namespace Factory.Controllers
       int machineId = joinEntry.MachineId;
       return RedirectToAction("Show", new { id = machineId });
     }
+
+    public ActionResult Update(int id)
+    {
+      Machine thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      return View(thisMachine);
+    }
+
+    [HttpPost]
+    public ActionResult Update(Machine machine)
+    {
+      _db.Machines.Update(machine);
+      _db.SaveChanges();
+      return RedirectToAction("Show", "Machines", new { id = machine.MachineId });
+
+    }
  }
 }

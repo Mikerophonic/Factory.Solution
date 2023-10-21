@@ -8,6 +8,7 @@
 <h2>Machine Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>  
+    <p>@Html.ActionLink("Edit", "Update", new { id = Model.MachineId })</p>
     @using (Html.BeginForm("Delete", "Machines", new { id = Model.MachineId }, FormMethod.Post))
     {
         <input type="submit" value="Delete"  />
@@ -19,7 +20,7 @@
 }
 else
 {
-  <h4>This machine can be repaired by the following engineers:</h4>
+  <h4>This machine can be repaired <br>by the following engineers:</h4>
   <ul>
     @foreach(EngineerMachine join in Model.JoinEntities)
     {
@@ -29,10 +30,14 @@ else
         @Html.Hidden("joinId", @join.EngineerMachineId)
         <input type="submit" value="Delete"/>
       }
+      <br>
     }
   </ul>
 }
-<p>@Html.ActionLink("Add an engineer", "AddEngineer", "Machines", new { id = Model.MachineId })</p>
-</div>
+<p>
+    <a class="btn" href="@Url.Action("AddEngineer", "Machines", new { id = Model.MachineId })">
+        Add licensed engineer
+    </a>
+</p></div>
 
   <p>@Html.ActionLink("Home", "Index", "Home")</p>

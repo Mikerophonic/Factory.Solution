@@ -8,6 +8,7 @@
 <h2>Engineer Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>  
+<p>@Html.ActionLink("Edit", "Update", new { id = Model.EngineerId })</p>
     @using (Html.BeginForm("Delete", "Engineers", new { id = Model.EngineerId }, FormMethod.Post))
     {
         <input type="submit" value="Delete"  />
@@ -19,7 +20,7 @@
 }
 else
 {
-  <h4>This engineer is licensed to repair the following machines:</h4>
+  <h4>This engineer is licensed to <br> repair the following machines:</h4>
   
   <ul>
     
@@ -31,12 +32,13 @@ else
         @Html.Hidden("joinId", @join.EngineerMachineId)
         <input type="submit" value="Delete"/>
       }
+      <br>
     }
   </ul>
 }
 <p>
     <a class="btn" href="@Url.Action("AddMachine", "Engineers", new { id = Model.EngineerId })">
-        Add a Machine
+        Add a machine license
     </a>
 </p>
 
