@@ -1,4 +1,4 @@
-# Dr. Sillystrinz's Factory
+# Dr. Sillystringz's Factory
 
 This is a web application for managing engineers and machines for a (fictional) factory.
 
